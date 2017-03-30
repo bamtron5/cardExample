@@ -55,5 +55,21 @@ var cards;
         [14, suits[2]],
         [14, suits[3]],
     ];
+    function shuffle() {
+        var count = 0;
+        var randomArr = Array(deck.length)
+            .fill('')
+            .map(function (v, k) { return k; });
+        for (var x = randomArr.length - 1; x > 0; --x) {
+            var y = Math.floor(Math.random() * (x + 1));
+            var temp = randomArr[x];
+            randomArr[x] = randomArr[y];
+            randomArr[y] = temp;
+        }
+        return randomArr;
+    }
+    var shuffleArr = shuffle();
+    var shuffledDeck = shuffleArr.map(function (v) { return deck[v]; });
+    console.log(shuffledDeck);
 })(cards || (cards = {}));
 //# sourceMappingURL=script.js.map

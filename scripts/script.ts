@@ -54,4 +54,25 @@ namespace cards {
     [14, suits[2]],
     [14, suits[3]],
   ];
+
+  function shuffle() {
+    let count = 0;
+    let randomArr = Array(deck.length)
+      .fill('')
+      .map((v, k) => k);
+
+    // Durstenfeld shuffle
+    for (let x = randomArr.length - 1; x > 0; --x) {
+      let y = Math.floor(Math.random() * (x + 1));
+      let temp = randomArr[x];
+      randomArr[x] = randomArr[y];
+      randomArr[y] = temp;
+    }
+
+    return randomArr;
+  }
+
+  let shuffleArr = shuffle();
+  let shuffledDeck = shuffleArr.map((v) => deck[v]);
+  console.log(shuffledDeck);
 }

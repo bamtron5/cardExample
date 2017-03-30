@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "watch": "tsc -w"
   },
   "author": "",
   "license": "ISC",
